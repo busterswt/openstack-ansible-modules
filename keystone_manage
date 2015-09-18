@@ -26,14 +26,6 @@ keystone_manage: action=dbsync
 
 import subprocess
 
-try:
-    # this is necessary starting from havana release due to bug 885529
-    # https://bugs.launchpad.net/glance/+bug/885529
-    from keystone.openstack.common import gettextutils
-    gettextutils.install('keystone')
-except AttributeError:
-    # this is not havana
-    pass
 
 try:
     from keystone.common import sql
